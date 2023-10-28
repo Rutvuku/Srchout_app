@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:schrout_app/screens/bike_details.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -133,24 +134,29 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      ItemCard(
-                          title: 'Meteore',
-                          imageUrl: 'assets/images/meteor.png',
-                          rate: '699/per day',
-                          subtitle: 'Royal Enfield'),
-                      ItemCard(
-                          title: 'Scout Bobber',
-                          imageUrl: 'assets/images/scout.png',
-                          rate: '1499/per day',
-                          subtitle: 'Indian'),
-                      ItemCard(
-                          title: 'Rebel 1100',
-                          imageUrl: 'assets/images/meteor.png',
-                          rate: '1199/per day',
-                          subtitle: 'Honda')
-                    ],
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BikeDetails()));
+                    },
+                    child: Row(
+                      children: [
+                        ItemCard(
+                            title: 'Meteore',
+                            imageUrl: 'assets/images/meteor.png',
+                            rate: '699/per day',
+                            subtitle: 'Royal Enfield'),
+                        ItemCard(
+                            title: 'Scout Bobber',
+                            imageUrl: 'assets/images/scout.png',
+                            rate: '1499/per day',
+                            subtitle: 'Indian'),
+                        ItemCard(
+                            title: 'Rebel 1100',
+                            imageUrl: 'assets/images/meteor.png',
+                            rate: '1199/per day',
+                            subtitle: 'Honda')
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
