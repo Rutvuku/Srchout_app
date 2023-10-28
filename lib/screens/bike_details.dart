@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schrout_app/screens/checkouit.dart';
 import 'package:schrout_app/utils/constants.dart';
 
 class BikeDetails extends StatelessWidget {
@@ -97,36 +98,41 @@ class BikeDetails extends StatelessWidget {
                               width: AppConstants.screenWidth(context) * 0.5,
                               height: AppConstants.screenHeight(context) * 0.3),
                           SizedBox(height: 26,),
-                          Container(
-                            width: 190,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20.0),
-                              border: Border.all(
-                                color: Colors.grey,
-                                width: 2.0,
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Checkout()));
+                            },
+                            child: Container(
+                              width: 190,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.grey,
+                                  width: 2.0,
+                                ),
                               ),
-                            ),
-                            child: Center(
-                                child: Column(
-                              children: [
-                                Text(
-                                  'Rate',
-                                  style: TextStyle(
+                              child: Center(
+                                  child: Column(
+                                children: [
+                                  Text(
+                                    'Rent',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    '1499/day',
+                                    style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 17,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  '1499/day',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                  ),
-                                )
-                              ],
-                            )),
+                                    ),
+                                  )
+                                ],
+                              )),
+                            ),
                           ),
                         ],
                       ),
